@@ -1,0 +1,27 @@
+using System;
+using Newtonsoft.Json.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        string json = @"{
+            'Produto': 'Notebook',
+            'Preco': 3500,
+            'Estoque': 10
+        }";
+
+        
+        JObject obj = JObject.Parse(json);
+
+        
+        Console.WriteLine(obj["Produto"]);
+        Console.WriteLine(obj["Preco"]);
+
+        
+        obj["Estoque"] = 8;
+
+        
+        Console.WriteLine(obj.ToString());
+    }
+}
